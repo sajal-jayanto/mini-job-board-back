@@ -14,13 +14,11 @@ export class JobsController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.jobsService.findAll();
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.jobsService.findOne(id);
   }
