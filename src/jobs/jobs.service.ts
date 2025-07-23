@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateJobDto } from './dto/create-job.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Job } from './entities/job.entity';
-import { MongoRepository, ObjectId } from 'typeorm';
+import { MongoRepository } from 'typeorm';
+import { ObjectId } from 'mongodb';
 
 @Injectable()
 export class JobsService {
@@ -21,7 +22,10 @@ export class JobsService {
     return this.jobRepo.find();
   }
 
-  findOne(id: string) {
-    return this.jobRepo.findOneBy({ _id: new ObjectId(id) });
+  async findOne(id: string) {
+    if (!ObjectId.isValid(id)) throw new NotFoundException('Invalid Job ID');
+    const selectedJob = await this.jobRepo.findOneBy({ _id: new ObjectId(id) });
+    if (!selectedJob) throw new NotFoundException('Job not found');
+    return selectedJob;
   }
 }
