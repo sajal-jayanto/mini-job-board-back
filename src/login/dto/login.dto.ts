@@ -1,4 +1,4 @@
-export class CreateJobDto {
+export class LoginDto {
   public email: string;
   public password: string;
 }

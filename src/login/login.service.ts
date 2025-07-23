@@ -36,9 +36,8 @@ export class LoginService {
     });
 
     return {
-      message: 'Login successful',
-      accessToken,
-      user: adminUser
+      message: 'login successfully',
+      token: accessToken,
     };
   }
 
