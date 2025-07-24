@@ -22,6 +22,18 @@ JWT_SECRET=a9PslB3Zx1qWqYJ8rRt6UoVe2bMf7T
 $ npm install
 ```
 
+## End point
+
+```base
+
+  Create jobs -> POST https://mini-job-board-back-production.up.railway.app/jobs
+  All jobs -> GET https://mini-job-board-back-production.up.railway.app/jobs
+  One Job -> GET https://mini-job-board-back-production.up.railway.app/jobs/JobId
+  Submit application POST -> https://mini-job-board-back-production.up.railway.app/application
+  All application GET -> https://mini-job-board-back-production.up.railway.app/application
+  Login POST -> https://mini-job-board-back-production.up.railway.app/login
+```
+
 ## Deploy Url
 
 ```base
