@@ -22,6 +22,12 @@ JWT_SECRET=a9PslB3Zx1qWqYJ8rRt6UoVe2bMf7T
 $ npm install
 ```
 
+## Deploy Url
+
+```base
+  https://mini-job-board-back-production.up.railway.app
+```
+
 ## Compile and run the project
 
 ```bash
